@@ -38,8 +38,17 @@ public class ProductDAO {
 		ps3.setString(3, "스타벅스");
 		ps3.setDouble(4, 5000.0);
 		System.out.println(ps3.executeUpdate()+" 개의 상품추가 성공!!");
+		
+		String deleteQuery = "DELETE FROM product WHERE no=?";
+		PreparedStatement ps4=delete(deleteQuery);
+		ps4.setInt(1, 2);
+		System.out.println(ps4.executeUpdate()+" 개의 상품삭제 성공!!");
 	}
 	private PreparedStatement add(String str) throws SQLException{
+		Connection conn=DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
+		return conn.prepareStatement(str);
+	}
+	private PreparedStatement delete(String str) throws SQLException{
 		Connection conn=DriverManager.getConnection(ServerInfo.URL, ServerInfo.USER, ServerInfo.PASS);
 		return conn.prepareStatement(str);
 	}
