@@ -93,6 +93,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			ps.setInt(1, num);
 			if(ps.executeUpdate()==0)
 				throw new RecordNotFoundException("삭제할 직원을 찾지 못했습니다.");
+			else {
+				System.out.println(ps.executeUpdate()+"명이 삭제 되었습니다.");
+			}
 		}catch(SQLException e) {
 			throw new DMLException("회원 탈퇴 과정이 진행되지 못했습니다.");
 		}
