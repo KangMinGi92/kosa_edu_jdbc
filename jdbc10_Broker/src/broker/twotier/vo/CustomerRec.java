@@ -1,6 +1,6 @@
 package broker.twotier.vo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class CustomerRec {
 	private String ssn;
@@ -8,7 +8,7 @@ public class CustomerRec {
 	private String address;
 	
 	//주식을 보유하는 고객을 설명할 수 있는 코드 부분!!!
-	private List<SharesRec> portfolio;
+	private ArrayList<SharesRec> portfolio;
 	
 	public CustomerRec() {
 	}
@@ -20,9 +20,7 @@ public class CustomerRec {
 		this.address = address;
 	}
 	
-	
-	
-	public CustomerRec(String ssn, String name, String address, List<SharesRec> portfolio) {
+	public CustomerRec(String ssn, String name, String address, ArrayList<SharesRec> portfolio) {
 		super();
 		this.ssn = ssn;
 		this.name = name;
@@ -55,11 +53,11 @@ public class CustomerRec {
 	}
 
 
-	public List<SharesRec> getPortfolio() {
+	public ArrayList<SharesRec> getPortfolio() {
 		return portfolio;
 	}
 
-	public void setPortfolio(List<SharesRec> portfolio) {
+	public void setPortfolio(ArrayList<SharesRec> portfolio) {
 		this.portfolio = portfolio;
 	}
 
